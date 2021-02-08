@@ -9,7 +9,7 @@ public class Main {
         float fk = 5.5f;
         double dd = 1.54;
         char c = '^';
-        String s2f = "Привет, Андрей!";
+        String s2f = "Привет, Давид!";
         boolean is = true;
         System.out.println(HW1(3, 7, 6,12));
         System.out.println(HW2 (5, 16));
