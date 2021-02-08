@@ -11,12 +11,11 @@ public class Main {
         char c = '^';
         String s2f = "Привет, Андрей!";
         boolean is = true;
-        System.out.println(HW1(2, 4, 6,6));
-//        System.out.println(HW2 (5, 16));
-//        System.out.println(HW3(-9));
-//        System.out.println(HW4(0));
-//        System.out.println(HW5 (4));
-//        System.out.println (4 % 400);
+        System.out.println(HW1(3, 7, 6,12));
+        System.out.println(HW2 (5, 16));
+        System.out.println(HW3(9));
+        System.out.println(HW4(0));
+        System.out.println(HW5 (4));
     }
     public static float HW1 (float a, float b, float c, float d) {
         return (a * (b + (c / d)));
@@ -26,6 +25,34 @@ public class Main {
             return (true);
         } else {
             return (false);
+        }
+    }
+    public static String HW3 (int chislo) {
+        String str;
+        if (chislo >= 0) {
+            return (str = "Вы ввели положительное число");
+        } else {
+            return (str = "Вы ввели отрицательное число");
+        }
+    }
+    public static boolean HW4 (int chislo) {
+        if (chislo < 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public static String HW5 (int year){
+        int vis1 = year % 4;
+        int vis2 = year % 100;
+        int vis3 = year % 400;
+        String str;
+        if ((vis1 == 0 || vis3 == 0) && (vis2 != 0 || vis3 == 0)) {
+            str = "Этот год является високосным";
+            return (str);
+        } else {
+            str = "Этот год не является високосным";
+            return (str);
         }
     }
 }
