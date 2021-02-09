@@ -16,6 +16,7 @@ public class Main {
         System.out.println(HW3(9));
         System.out.println(HW4(0));
         System.out.println(HW5 (4));
+        System.out.println(HW6("Григорий"));
     }
     public static float HW1 (float a, float b, float c, float d) {
         return (a * (b + (c / d)));
@@ -54,5 +55,9 @@ public class Main {
             str = "Этот год не является високосным";
             return (str);
         }
+    }
+    public static String HW6 (String str1) {
+        String str2 = "Привет, ";
+        return (str2 + str1 + "!");
     }
 }
