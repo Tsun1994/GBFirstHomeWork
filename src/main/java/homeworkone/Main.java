@@ -48,7 +48,7 @@ public class Main {
         int vis2 = year % 100;
         int vis3 = year % 400;
         String str;
-        if ((vis1 == 0 || vis3 == 0) && (vis2 != 0 || vis3 == 0)) {
+            if ((vis1 == 0 || vis3 == 0) && (vis2 != 0 || vis3 == 0)) {
             str = "Этот год является високосным";
             return (str);
         } else {
