@@ -31,19 +31,19 @@ public class massiv {
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a[i].length; j++) {
                 a[i][j] = (int) (Math.random() * 10);
-                System.out.print(a[i][j] + " ");
+               // System.out.print(a[i][j] + " ");
             }
-            System.out.println();
+            //System.out.println();
         }
-        System.out.println("______________");
+        //System.out.println("______________");
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a[i].length; j++) {
                 if ((i == j) || (j == a[i].length - 1 - i)){
                     a[i][j] = 1;
                 }
-                System.out.print(a[i][j] + " ");
+                //System.out.print(a[i][j] + " ");
             }
-            System.out.println();
+            //System.out.println();
         }
 
 
@@ -66,15 +66,40 @@ public class massiv {
         }
 //        System.out.print(armmin + " ");
 //        System.out.print(armmax);
-        int [] c = new int[10];
-        System.out.println(summa(c));
+        int [] c = new int[10]; // задание 7
+        for (int i = 0; i < c.length; i++) {
+            c[i] = (int) (Math.random() * 15);
+            System.out.print(c[i] + " ");
+        }
+        summa(c, 2);
     }
-    public static boolean summa (int [] drr){ //нет идей для решения следующих двух задач, еще сегодня подумаю.
-        for (int i = 1; i < drr.length; i++) {
-            for (int j = 0; j < i; j++) {
-                int sum1 = drr [j] + drr [i];
+    public static void summa (int [] drr, int n){
+        int n1 = 0;
+        if (n > 0) {
+            while (n1 < n) {
+                for (int i = 0; i < drr.length - 1; i++) {
+                    int h = drr[i];
+                    drr[i] = drr[i + 1];
+                    drr[i + 1] = h;
+                }
+                n1++;
+            }
+        } else {
+            while (n1 > n) {
+                for (int i = drr.length - 1 ; i > 0; i--) {
+                    int h = drr[i - 1];
+                    drr[i - 1] = drr[i];
+                    drr[i] = h;
+                }
+                n1--;
             }
         }
-        return (true);
+        System.out.println();
+        for (int i = 0; i < drr.length; i++) {
+            System.out.print(drr[i] + " ");
+            }
+        }
+
     }
-}
+
+
