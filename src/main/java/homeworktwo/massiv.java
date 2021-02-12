@@ -69,10 +69,10 @@ public class massiv {
         int [] c = new int[10];
         System.out.println(summa(c));
     }
-    public static boolean summa (int [] drr){
+    public static boolean summa (int [] drr){ //нет идей для решения следующих двух задач, еще сегодня подумаю.
         for (int i = 1; i < drr.length; i++) {
             for (int j = 0; j < i; j++) {
-                int sum1 = drr[j] + drr [i];
+                int sum1 = drr [j] + drr [i];
             }
         }
         return (true);
