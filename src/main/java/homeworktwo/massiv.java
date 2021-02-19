@@ -49,8 +49,8 @@ public class massiv {
 
         int [] arm = new int[15]; // задание 5
         for (int i = 0; i < arm.length; i++) {
-            arm[i] = (int) (Math.random() * 15);
-            //System.out.print(arm[i] + " ");
+            arm[i] = (int) (Math.random() * 10);
+            System.out.print(arm[i] + " ");
         }
        // System.out.println();
         int armmax = arm[0];
@@ -71,7 +71,7 @@ public class massiv {
             c[i] = (int) (Math.random() * 15);
             System.out.print(c[i] + " ");
         }
-        summa(c, 2);
+        //summa(c, -30);
     }
     public static void summa (int [] drr, int n){
         int n1 = 0;
