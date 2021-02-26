@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
-public class TicTakToe {
+public class TicTakToe { // программа доработана кроме момента с блком компьютера
     private static char [] [] map;
     private static final int SIZE = 3;
     private static final char EMPTY_DOT = '•';
@@ -87,6 +87,7 @@ public class TicTakToe {
     private static void computerTurn(){
         int xCoordinate;
         int yCoordinate;
+
         do {
             Random random = new Random();
             xCoordinate = random.nextInt(SIZE);
@@ -94,6 +95,28 @@ public class TicTakToe {
         } while (!isValidCell(xCoordinate, yCoordinate));
         map[yCoordinate][xCoordinate] = O_DOT;
     }
+
+//    private static boolean compBlock (char c){
+//        for (int i = 0; i < SIZE; i++) {
+//            for (int j = 0; j < SIZE; j++) {
+//                if (map[i][0] == c && map [i][1] == c) {
+//                    map[i][2] = EMPTY_DOT;
+//                    return true;
+//                }
+//                if (map [i][1] == c && map[i][2] == c) {
+//                     map[i][0] = EMPTY_DOT;
+//                     return true;
+//                if (map[0][i] == c && map[1][i] == c) {
+//                    map[2][i] = EMPTY_DOT;
+//                    return true;
+//                }
+//                if (map[1][i] == c && map[2][i] == c) {
+//                    map[0][i] = EMPTY_DOT;
+//                    return true;
+//                }
+//            }
+//        }
+//    }
 
     private static void humanTurn(){
         int xCoordinate = -1;

@@ -61,51 +61,28 @@ public class TicTakToe5x5 {
         return true;
     }
     private static boolean checkWin(char c) {
-        int ch1 = 0;
+        int check1 = 0;
         int ch2 = 0;
         int ch3 = 0;
         int ch4 = 0;
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
-                if ((map [i][0] == c && map [i][1] == c && map [i][2] == c && map [i][3] == c) ||
-                        map [i][1] == c && map [i][2] == c && map [i][3] == c && map [i][4] == c){ //проверка по горизонтали
-                    return true;
-                }
-                }
-                if ((map [0][i] == c && map [1][i] == c && map [2][i] == c && map [3][i] == c) ||  // проверка вертикали
-                        (map [1][i] == c && map [2][i] == c && map [3][i] == c && map [4][i] == c)){
-                    return true;
-                }
+        for (int i = 0; i < SIZE; i++) { //были разные варианты, но я уже не знаю как правильно двигаться в этой программе и считать победу
+            if ((map[i][0] == c && map[i][1] == c && map[i][2] == c && map [i][3] == c) || (map[i][1] == c && map[i][2] == c && map[i][3] == c && map [i][4] == c)){ // проверка по горизонтали
+                return true;
             }
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
-                if (i == j && map[i][j] == c && (ch1 == i || ch1 == i - 1)) { //проверка по диагонали справа налево вниз
-                    ch1++;
-                }
+        }
+        for (int i = 0; i < SIZE; i++) { // проверка по горизонтали
+            if ((map[0][i] == c && map[1][i] == c && map[2][i] == c && map [3][i] == c) || (map[1][i] == c && map[2][i] == c && map[3][i] == c && map [4][i] == c)){ // проверка по горизонтали
+                return true;
             }
         }
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE; j++) {
-                if (i == SIZE - j - 1 && map[i][j] == c && (ch2 == i || ch2 == i + 1)) { // проверка по диагонали слева направо вниз
-                    ch2++;
+                if (map[i][j] == c && i == j){ // проверка по диагонали сверху вниз вправо
+                    check1++;
                 }
             }
         }
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
-                if ((i == j + 1 || i + 1 == j) && (map[i][j] == c || map[j][i] == c) && (ch3 == i || ch3 == j)) { // проверка сбоку от главной диагонали справа налево вниз
-                    ch3++;
-                }
-            }
-        }
-        for (int i = 0; i < SIZE; i++) {
-            for (int j = 0; j < SIZE; j++) {
-                if ((i + j == 3 || i + j == 4) && map[i][j] == c && (ch4 == i || ch4 == i - 1)) { // проверка сбоку от главной диагонали слева направо вниз
-                    ch4++;
-                }
-            }
-        }
-        return ch1 == SIZE - 1 || ch2 == SIZE - 1 || ch3 == SIZE - 1 || ch4 == SIZE - 1;
+        return false;
     }
 
     private static void computerTurn(){
