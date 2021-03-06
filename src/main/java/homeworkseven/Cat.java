@@ -1,7 +1,8 @@
 package homeworkseven;
 
 public class Cat {
-    boolean hungry = true;
+    boolean satiety = false;
+    String name;
 
     public void catEat (){
 
