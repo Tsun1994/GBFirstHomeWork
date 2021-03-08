@@ -31,7 +31,7 @@ public class CatServis {
         cats[3] = new Cat(false, "Klop", a);
         a = rand.nextInt(50) + 1;
         cats[4] = new Cat(false, "Moska", a);
-        System.out.println("Написать количество еды для "+ cats.length + " кота");
+        System.out.println("Написать количество еды для " + cats.length + " кота");
         food = cs.nextInt();
         Plate plate1 = new Plate(food);
         plate1.info();
@@ -45,4 +45,5 @@ public class CatServis {
             }
         }
     }
+
 }
