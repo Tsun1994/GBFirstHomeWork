@@ -1,7 +1,5 @@
 package homework4;
 
-import com.sun.org.apache.bcel.internal.generic.SIPUSH;
-import com.sun.prism.shader.Solid_Color_AlphaTest_Loader;
 
 import java.util.Arrays;
 import java.util.Random;

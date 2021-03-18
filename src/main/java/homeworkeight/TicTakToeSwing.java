@@ -12,7 +12,9 @@ public class TicTakToeSwing extends JFrame {
     private static final String O_DOT = "O";
     private static TicTakToeSwing ticTakToeSwing;
 
+
     public static void main (String [] args){
+
         ticTakToeSwing = new TicTakToeSwing();
         ticTakToeSwing.setTitle("Крестики и нолики");
         ticTakToeSwing.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -29,6 +31,7 @@ public class TicTakToeSwing extends JFrame {
 
         ticTakToeSwing.setVisible(true);
 
+
         while (true){
             humanTurn(jbssss);
             if (checkWin(jbssss, X_DOT)){
@@ -43,7 +46,7 @@ public class TicTakToeSwing extends JFrame {
                 Thread.sleep(3000);
             }catch (InterruptedException ignored){
             }
-            compTurn(jbssss);
+            //compTurn(jbssss);
             if (checkWin(jbssss, O_DOT)) {
                 System.out.println("You lose");
                 break;
@@ -103,17 +106,19 @@ public class TicTakToeSwing extends JFrame {
             yCoordinate = random.nextInt(3);
         } while (!isValidCell(xCoordinate, yCoordinate, jbssss));
         jbssss[xCoordinate][yCoordinate].setLabel(O_DOT);
+        return;
     }
 
     private static boolean isValidCell (int x, int y, JButton [][]jbssss){
         return jbssss[x][y].getText().equals("[    ]");
     }
 
-    private static void humanTurn(JButton [][] jbssss){
+    private static boolean humanTurn(JButton [][] jbssss){
         jbssss[0][0].addActionListener(new AbstractAction() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 jbssss[0][0].setLabel(X_DOT);
+                compTurn(jbssss);
             }
         });
 
@@ -171,5 +176,6 @@ public class TicTakToeSwing extends JFrame {
                 jbssss[2][2].setLabel(X_DOT);
             }
         });
+        return true;
     }
 }
