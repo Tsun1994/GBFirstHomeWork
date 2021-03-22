@@ -4,7 +4,7 @@ public class Human {
     private int jumpHeight;
     private int runningLength;
     private String name;
-    private boolean state;
+    boolean state;
 
     public Human(int jumpHeight, int runningLength, String name, boolean state) {
         this.jumpHeight = jumpHeight;

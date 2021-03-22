@@ -19,7 +19,9 @@ public class Main {
         robot1.Run(track1.getDinstation(), robot1.getRunningLength());
         robot1.Jump(wall1.getHeight(), robot1.getRunningLength());
 
+        System.out.println();
         System.out.println("А теперь пошли участники на препятствия");
+        System.out.println();
 
         Human [] humans = new Human[5];
         humans [0] = new Human(10, 20, "Lop", true);
@@ -60,9 +62,9 @@ public class Main {
                     break;
                 }
             }
-            for (Track track : tracks) {
+            for (int i = 0; i < tracks.length && human.isState(); i++) {
                 if (human.isState()){
-                    human.Run(track.getDinstation(), human.getRunningLength(), human.getName(), human.isState());
+                    human.Run(tracks[i].getDinstation(), human.getRunningLength(), human.getName(), human.isState());
                 } else {
                     System.out.println(human.getName() + "больше не идет по препятствиям");
                     break;
