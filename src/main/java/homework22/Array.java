@@ -1,4 +1,4 @@
 package homework22;
 
-public class Test {
+public class Array {
 }
