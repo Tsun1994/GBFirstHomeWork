@@ -1,12 +1,16 @@
 package homework23;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
-    public static void main (String [] args){
-        PhoneInfo info = new PhoneInfo();
-//        info.getNameInfo();
-        //info.printInfo("Falop", "4654", 0);
-//        PhoneInfo.addInfo(info.getNameInfo(), info.getPhoneInfo(), 6);
+    public static void main(String[] args) {
+        String [] words = {"Rasta", "Gasta", "Gastal", "df", "Rasta", "Gasta", "Gastal", "gfdfg", "Rasta", "Gasta", "gfdfg", "fdgf"};
+        Map <String, Integer> map = new HashMap<>();
+        for (String sl: words) {
+            map.put(sl, map.getOrDefault(sl, 0) + 1);
+        }
+
+        System.out.println(map + " и количество уникальных слов " + map.size());
     }
 }
