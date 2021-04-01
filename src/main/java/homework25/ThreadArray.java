@@ -9,7 +9,7 @@ public class ThreadArray {
 
     public static void main(String[] args) {
         fillArray();
-        currentArray(12);
+        currentArray(3);
     }
 
     public static void fillArray (){
