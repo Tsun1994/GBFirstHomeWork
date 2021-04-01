@@ -17,7 +17,7 @@ public class ThreadArray {
         Arrays.fill(arr, 1);         // заполняем его единицами
         long currentTime = System.currentTimeMillis(); // здесь мы получаем значение времени выполнения заполнения данного массива
         System.out.println("Время выполнения первого заполнения - " + currentTime);  // выводим время, которое понадобилось программе для выполнения предыдущей строчки
-        Thread t1 = new Thread(() ->{ // не совсем понял, что за запись, но здесь мы создаем поток и вкладываем в него ту подпрограмму, что должна выполняться
+        java.lang.Thread t1 = new java.lang.Thread(() ->{ // не совсем понял, что за запись, но здесь мы создаем поток и вкладываем в него ту подпрограмму, что должна выполняться
             for (int i = 0; i < size; i++) {  // бегаем от 0 до значения size
                 arr[i] = (float)(arr[i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2)); //начинаем бегать по массиву и заполнять новыми значениями по формуле
             }
@@ -59,10 +59,10 @@ public class ThreadArray {
             }
             float [] tempArr = newArr[i];  // при этом создаем новый массив из нового массива
             int count = i;
-            threads[i] = new Thread(new Runnable() { // начинаем бегать по новом массиву из потоков
+            threads[i] = new java.lang.Thread(new Runnable() { // начинаем бегать по новом массиву из потоков
                 @Override
                 public void run() {
-                    for (int j = 0, k = count * size1; j < newArr.length; j++, k++){ // где мы делаем новый цикл из двух переменных
+                    java.lang.for (int j = 0, k = count * size1; j < newArr.length; j++, k++){ // где мы делаем новый цикл из двух переменных
                         tempArr[j] = (float)(tempArr[j] * Math.sin(0.2f + k / 5) * Math.cos(0.2f + k / 5) * Math.cos(0.4f + k / 2));
                         //нашему третьему массиву, где ч это значение текущей операции i помножение на size1
                         // и мы бегаеи по этому массиву, пока не кончится длина нашего первого массива newArr
