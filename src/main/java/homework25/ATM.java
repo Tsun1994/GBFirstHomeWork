@@ -1,5 +1,7 @@
 package homework25;
 
+import java.lang.Thread;
+
 public class ATM {
     int money;
 
@@ -8,7 +10,7 @@ public class ATM {
     }
 
     public synchronized void  took (int a, String user){
-        if (money => a){
+        if (money >= a){
             try{
                 java.lang.Thread.sleep(100);
             } catch (InterruptedException e){
